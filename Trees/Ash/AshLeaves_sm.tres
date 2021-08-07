@@ -1,0 +1,60 @@
+[gd_resource type="ShaderMaterial" load_steps=13 format=2]
+
+[ext_resource path="res://Ash/deciduous_leaves.shader" type="Shader" id=1]
+[ext_resource path="res://Ash/AshLeavesGradient.tres" type="Texture" id=2]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+
+[sub_resource type="NoiseTexture" id=2]
+noise = SubResource( 1 )
+
+[sub_resource type="OpenSimplexNoise" id=3]
+
+[sub_resource type="NoiseTexture" id=4]
+noise = SubResource( 3 )
+
+[sub_resource type="OpenSimplexNoise" id=5]
+octaves = 2
+period = 95.6
+
+[sub_resource type="NoiseTexture" id=6]
+noise = SubResource( 5 )
+
+[sub_resource type="OpenSimplexNoise" id=7]
+
+[sub_resource type="NoiseTexture" id=8]
+as_normalmap = true
+noise = SubResource( 7 )
+
+[sub_resource type="Curve" id=9]
+_data = [ Vector2( 0.0077187, 0.18635 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.259969 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=10]
+width = 100
+curve = SubResource( 9 )
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/use_debug = true
+shader_param/season = 0.502
+shader_param/alpha_scissor = 0.1
+shader_param/saturation = 1.0
+shader_param/debug_wind = Vector3( 10, 0, 0 )
+shader_param/dying_albedo = null
+shader_param/albedo_mix = null
+shader_param/ao_light_affect = 0.843
+shader_param/normal_scale = 0.259
+shader_param/tex_scale = 1.563
+shader_param/debug_age = 1.0
+shader_param/water_ratio = 1.0
+shader_param/unhealthy_albedo = Color( 0.337255, 0.337255, 0.337255, 1 )
+shader_param/test_albedo = Color( 0.403922, 0.701961, 0.490196, 1 )
+shader_param/ambient_wind_uv_scale = Vector2( 0.1, 0.1 )
+shader_param/ambient_wind_amplitude = 0.004
+shader_param/angle_debug = 0.0
+shader_param/season_colors = ExtResource( 2 )
+shader_param/albedo_tex = SubResource( 2 )
+shader_param/normal_tex = SubResource( 8 )
+shader_param/dissolve_tex = SubResource( 6 )
+shader_param/strength_curve = SubResource( 10 )
+shader_param/ambient_wind = SubResource( 4 )

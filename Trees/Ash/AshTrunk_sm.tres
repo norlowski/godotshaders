@@ -1,0 +1,35 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=2]
+
+[ext_resource path="res://Ash/deciduous_wind.shader" type="Shader" id=1]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+
+[sub_resource type="NoiseTexture" id=2]
+noise = SubResource( 1 )
+
+[sub_resource type="CurveTexture" id=3]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/use_debug = true
+shader_param/use_season = false
+shader_param/base_albedo = Color( 0.384314, 0.270588, 0.0431373, 1 )
+shader_param/season = 0.0
+shader_param/saturation = 0.422
+shader_param/debug_wind = Vector3( 10, 0, 0 )
+shader_param/dying_albedo = null
+shader_param/albedo_mix = 1.0
+shader_param/ao_light_affect = null
+shader_param/normal_scale = null
+shader_param/tex_scale = null
+shader_param/metallic = 0.0
+shader_param/roughness = 1.0
+shader_param/debug_age = 1.0
+shader_param/water_ratio = 1.0
+shader_param/unhealthy_albedo = Color( 0.372549, 0.372549, 0.372549, 1 )
+shader_param/ambient_wind_uv_scale = Vector2( 0.1, 0.1 )
+shader_param/ambient_wind_amplitude = 0.1
+shader_param/is_leaves = true
+shader_param/angle_debug = null
+shader_param/dissolve_tex = SubResource( 2 )
+shader_param/strength_curve = SubResource( 3 )
